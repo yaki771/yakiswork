@@ -32,11 +32,12 @@ class Student(models.Model):
         return self.full_name
 
 class Homework(models.Model):
-    commit_date = models.DateField()
-    headline = models.CharField(max_length=200)
-    attach = models.FileField()
-    remark = models.TextField()
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    离校日期 = models.DateField()
+    目的地 = models.CharField(max_length=200, default = '省份')
+    交通工具 = models.CharField(max_length=200)
+    姓名 = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.headline
+        return self.目的地
+
+    

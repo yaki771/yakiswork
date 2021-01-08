@@ -6,7 +6,7 @@ class Name(models.Model):
     def __str__(self):
         return self.full_name
 
-class Article(models.Model):
+class Information(models.Model):
     离校日期 = models.DateField()
     目的地 = models.CharField(max_length=200)
     交通工具 = models.TextField()
