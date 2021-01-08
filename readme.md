@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 作业
+=======
+>>>>>>> 1fc6c34ce21046c96dc93cec77ca6401380f4b4c
 # 分布式系统与云计算课程报告
 ------------
 [toc]
@@ -28,6 +31,7 @@ sudo python3 -m http.server --directory html-css-examples 80
 ```
 - **html页面展示** 
 ![Alt text](./1607072875144.png)
+<<<<<<< HEAD
 ###6.阿里云服务器操作
 ####（1）访问到云主机http服务
 ####（2）申请域名
@@ -69,7 +73,7 @@ i.创建数据模型model：确定数据库表的结构
 无需提交的代码：*pyc
 							   *.sqlit3(数据库)
 								添加到.gitignore
-	44'50
+	
 	打开mysite-settings，将app加入INSTALL_APP中
 ```python
 #查看数据库#
@@ -80,3 +84,7 @@ sqlite3
 python3 manage.py makemigrations
 ```
 ii.     
+=======
+
+## 作业二：用Django编写简易云盘系统
+>>>>>>> 1fc6c34ce21046c96dc93cec77ca6401380f4b4c
