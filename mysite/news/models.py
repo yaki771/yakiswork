@@ -31,19 +31,15 @@ class Student(models.Model):
     def __str__(self):
         return self.full_name
 
-class 交通工具(models.Model):
-    type = models.CharField(max_length=70)
 
-    def __str__(self):
-        return self.type
 
 class Homework(models.Model):
     离校日期 = models.DateField()
     目的地 = models.CharField(max_length=200, default = '省份')
-    交通工具 = models.ForeignKey(交通工具, on_delete=models.CASCADE)
+    交通工具 = models.CharField(max_length=200, default= '方式')
     姓名 = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.目的地
+        return self.姓名
 
     

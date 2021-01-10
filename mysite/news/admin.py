@@ -4,4 +4,3 @@ from . import models
 
 admin.site.register(models.Student)
 admin.site.register(models.Homework)
-admin.site.register(models.交通工具)
