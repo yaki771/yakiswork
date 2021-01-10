@@ -16,4 +16,4 @@ from django.views.generic.edit import CreateView
 class HomeworkCreate(CreateView):
     model = Homework
     template_name = 'homework_form.html'
-    fields = ['离校日期','headline','attach','remark', 'student']
+    fields = ['离校日期','目的地','交通工具','姓名']
