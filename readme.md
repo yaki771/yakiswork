@@ -1,21 +1,19 @@
-<<<<<<< HEAD
-作业
-=======
->>>>>>> 1fc6c34ce21046c96dc93cec77ca6401380f4b4c
 # 分布式系统与云计算课程报告
 ------------
 [toc]
 ## 作业一：虚拟机相关操作
 ### 1.安装Ubuntu20.04服务器版
 ### 2.配置虚拟机网络为桥接
+![Alt text](./虚拟机1.png)
 
-![Alt text](./1606896833837.png)
+
 ### 3.使用ifconfig命令查看虚拟主机地址
 > **NAT**为虚拟机内部独立的网络（网关），为内网
 > **桥接网络**虚拟机和主机在同一个网络中，在局域网中使用虚拟机，并且虚拟机对其他pc提供服务
 
 基本命令：cd/sudo/apt/ifconfig等
-![Alt text](./1606897289652.png)
+![Alt text](./虚拟机2.png)
+
 ### 4.host主机与guest主机的ping通
 ### 5.在guest主机中开通http server服务
 #### （1）git clone对应仓库
@@ -30,11 +28,18 @@
 sudo python3 -m http.server --directory html-css-examples 80
 ```
 - **html页面展示** 
-![Alt text](./1607072875144.png)
-<<<<<<< HEAD
+![Alt text](./虚拟机3.png)
+
 ###6.阿里云服务器操作
 ####（1）访问到云主机http服务
-####（2）申请域名
+- **问题：**apt install git 失败
+- **解决方法：**apt-get update
+				   apt-get upgrade
+![Alt text](./aliyun2.png)
+![Alt text](./aliyun1.png)
+![Alt text](./aliyun3.png)
+
+
 
 
 ## 作业二：用Django编写简易云盘系统
@@ -45,7 +50,7 @@ sudo python3 -m http.server --directory html-css-examples 80
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
 ```
-![Alt text](./1608024052115.png)
+![Alt text](./django1.png)
 （2）建立本地目录repos，将git仓库地址clone到文件中
 ```python
 git clone  git@github.com:yaki771/yakiswork.git
@@ -68,13 +73,14 @@ python3 manage.py runserver
 python manage.py startapp polls
 
 ```
-开发应用程序：
+###2.开发应用程序：
 i.创建数据模型model：确定数据库表的结构
 无需提交的代码：*pyc
 							   *.sqlit3(数据库)
 								添加到.gitignore
-	
-	打开mysite-settings，将app加入INSTALL_APP中
+
+
+打开mysite-settings，将app加入INSTALL_APP中
 ```python
 #查看数据库#
 sqlite3 
@@ -83,8 +89,14 @@ sqlite3
 #数据库迁移，生成改变数据库结构的文件#
 python3 manage.py makemigrations
 ```
-ii.     
-=======
+- **问题**：在model.py表中修改属性时，数据库表中没有修改
+- **解决方法：**python manage.py makemigrations 迁移到数据库
+python manage.py migrate
 
-## 作业二：用Django编写简易云盘系统
->>>>>>> 1fc6c34ce21046c96dc93cec77ca6401380f4b4c
+ii.     编写页面
+admin.py 管理页面，进行数据库的管理
+from django.contrib import admin
+from . import models
+admin.site.register(models.Article)
+
+iii。定义urls
