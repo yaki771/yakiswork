@@ -3,11 +3,11 @@
 {% block title %}homework for {{ year }}{% endblock %}
 
 {% block content %}
-<h1>homework for {{ year }}</h1>
+<div style="color:red">homework for {{ year }}<div>
 
-{% for homework in homework_list %}
+{% for homework in work_list %}
     <p>{{ homework.目的地 }}</p>
-    <p>By {{ homework.Studens.full_name }}</p>
+    <p>By {{ homework.学生信息.full_name }}</p>
     <p>Published {{ homework.离校日期|date:"F j, Y" }}</p>
 {% endfor %}
 {% endblock %}
