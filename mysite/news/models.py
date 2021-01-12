@@ -19,7 +19,7 @@ class Article(models.Model):
 from django.db import models
 
 class Student(models.Model):
-    full_name = models.CharField(max_length=70)
+    full_name = models.CharField(max_length=70,default='', verbose_name='姓名')
     #age = models.IntegerField()
     class Sex(models.IntegerChoices):
         MALE = 1, '男'
@@ -31,15 +31,22 @@ class Student(models.Model):
     def __str__(self):
         return self.full_name
 
-
+class 交通工具(models.Model):
+    vehicle = models.CharField(max_length=70,default='', verbose_name='姓名')
+    #age = models.IntegerField()
+   
+    def __str__(self):
+        return self.vehicle
 
 class Homework(models.Model):
+    姓名 = models.ForeignKey(Student, on_delete=models.CASCADE)
+    学号 = models.CharField(max_length=13, default = '填写学号')
     离校日期 = models.DateField()
     目的地 = models.CharField(max_length=200, default = '省份')
-    交通工具 = models.CharField(max_length=200, default= '方式')
-    姓名 = models.ForeignKey(Student, on_delete=models.CASCADE)
+    交通工具 = models.ForeignKey(交通工具, on_delete=models.CASCADE)
+    
 
     def __str__(self):
-        return self.姓名
+        return self.学号
 
     
